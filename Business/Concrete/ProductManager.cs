@@ -22,7 +22,7 @@ namespace Business.Concrete
 
         public IResult Add(Product product)
         {
-            if (product.ProductName.Length<2)
+            if (product.ProductName.Length < 2)
             {
                 return new ErrorResult(Messages.ProductNameInvalid);
             }
@@ -38,7 +38,7 @@ namespace Business.Concrete
                 return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
             }
 
-            return new  SuccessDataResult<List<Product>>(_productDal.GetAll(),Messages.ProductListed);
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(), Messages.ProductListed);
         }
 
         public IDataResult<List<Product>> GetAllByCategoryId(int id)
